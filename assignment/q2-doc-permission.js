@@ -73,3 +73,16 @@ class Permission{
 }
 
 // Add code here
+class Document extends Permission {
+
+     // private variables
+     #content
+
+    constructor(role, operation, content) {
+        this.#content = content;
+        super(role, operation) 
+    }
+
+    process(check)
+    
+}

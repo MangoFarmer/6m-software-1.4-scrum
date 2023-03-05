@@ -7,22 +7,36 @@
 */
 
 // Task: Add code here
+class BaseSignal {
+    constructor(role, operation, type){
+        if(this.constructor.name === "Permission"){
+            throw new Error("This class cannot be instantiated");
+        }
+        this.role = role;
+        this.operation = operation
+        this.type = type
+    }
+
+    send() {
+        console.log(`Sending ${this.type} signal`);
+      }
+}
 
 class TvSignal extends BaseSignal {
-    constructor(){
-        // Add code here
+    constructor(type){
+        super(type)
     }
 }
 
 class AirconSignal extends BaseSignal {
-    constructor(){
-        // Add code here
+    constructor(type){
+        super(type)
     }
 }
 
 class DoorSignal extends BaseSignal {
-    constructor(){
-        // Add code here
+    constructor(type){
+        super(type)
     }
 }
 
@@ -34,3 +48,4 @@ door.send(); // prints "Sending door signal"
 
 const aircon = new AirconSignal();
 aircon.send(); // prints "Sending aircon signal"
+
