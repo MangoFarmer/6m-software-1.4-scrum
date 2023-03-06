@@ -8,13 +8,11 @@
 
 // Task: Add code here
 class BaseSignal {
-    constructor(role, operation, type){
-        if(this.constructor.name === "Permission"){
+    constructor(type){
+        this.type = type
+        if(this.constructor.name === "BaseSignal"){
             throw new Error("This class cannot be instantiated");
         }
-        this.role = role;
-        this.operation = operation
-        this.type = type
     }
 
     send() {
@@ -25,18 +23,21 @@ class BaseSignal {
 class TvSignal extends BaseSignal {
     constructor(type){
         super(type)
+        this.type = "tv";
     }
 }
 
 class AirconSignal extends BaseSignal {
     constructor(type){
         super(type)
+        this.type = "aircon";
     }
 }
 
 class DoorSignal extends BaseSignal {
     constructor(type){
         super(type)
+        this.type = "door";
     }
 }
 
